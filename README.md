@@ -1,3 +1,9 @@
-# Java-8
+# Java
 
-Sample Problems on Java 8 new concepts.
+# RESTful API
+- HTTPs methods
+  
+# Architecture
+- SOLID principles
+- Idempotent
+- ACID properties
