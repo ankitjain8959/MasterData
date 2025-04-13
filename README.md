@@ -1,4 +1,8 @@
 # Java
+- Serialization & Deserialization
+- Jackson, ObjectMapper
+- Mapstruct
+- Entity vs DTO
 - 100% Object Oriented or not
 - Memory areas
 - Garbage collection
@@ -9,6 +13,7 @@
 
 # RESTful API
 - HTTPs methods
+- Rest API Security Design principles
 
 # Spring
 - End to End Architecture or Flow
@@ -20,6 +25,7 @@
 - Idempotent
 - ACID properties
 - Jwt
+- Zero Trust Architecture
 
 # Maven
 
