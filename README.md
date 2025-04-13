@@ -19,6 +19,7 @@
 - End to End Architecture or Flow
 - Spring Security
 - Spring Profiles
+- Spring Bean
   
 # Architecture
 - SOLID principles
