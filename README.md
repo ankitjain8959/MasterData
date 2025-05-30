@@ -22,36 +22,48 @@ MyObject obj = objectMapper.readValue(jsonString, MyObject.class);
 This is useful when processing incoming API requests or reading data from MongoDB or external APIs.
 
 
-- Serialization & Deserialization
-- Jackson, ObjectMapper
-- Mapstruct
-- Entity vs DTO
-- 100% Object Oriented or not
-- Memory areas
-- Garbage collection
-- String, StringBuffer, StringBuilder
-- Stream vs ParallelStream
-- Functional programming
-- Concurrent Modification Exception
-- ShallowCopy vs DeepCopy
+### Serialization & Deserialization
+### Mapstruct
+### Entity vs DTO
+### 100% Object Oriented or not
+### Memory areas
+### Garbage collection
+### String, StringBuffer, StringBuilder
+### Stream vs ParallelStream
+### Functional programming
+### Concurrent Modification Exception
+### ShallowCopy vs DeepCopy
 
 # RESTful API
-- HTTPs methods
-- Rest API Security Design principles
+### HTTPs methods
+### Rest API Security Design principles
 
 # Spring
-- End to End Architecture or Flow
-- Spring Security
-- Spring Profiles
-- Spring Bean
-  
-# Architecture
-- SOLID principles
-- Idempotent
-- ACID properties
-- Jwt
-- Zero Trust Architecture
+### End to End Architecture or Flow
+### Spring Security
+### Spring Profiles
+### Spring Bean
 
+# Maven
+
+# MongoDB
+
+# Docker
+
+# Kubernetes
+### Your application stores order data in MongoDB Cloud (eg. Atlas). Should you deploy it as a Deployment or StatefulSet? Why?
+Since, MongoDB is not hosted inside Kubernetes, your application should be deployed as a `Deployment`. <br>
+The app interacts with MongoDB as an external managed service, not within your cluster. <br>
+The application: <br>
+	- Does not store state between requests. <br>
+	- Sends data to or queries data from MongoDB Cloud. <br>
+MongoDB’s persistence and state are managed outside Kubernetes and is handled by the cloud provider. <br>
+Therefore, your application is still stateless, and a Deployment is the right choice. <br>
+
+### Your application stores order data in MongoDB hosted inside Kubernetes cluster. Should you deploy it as a Deployment or StatefulSet? Why?
+You should deploy your application (Java + Spring Boot) as a Deployment, and MongoDB as a StatefulSet. <br>
+
+# Architecture
 ### Stateful vs Stateless applications
 `State` meaning `user/session data`.
 
@@ -91,11 +103,8 @@ Stateful application: <br>
 - Scaling is harder because user state is on a particular server (need sticky sessions or session replication).
 - If the server crashes, session data is lost.
 
-# Maven
-
-# MongoDB
-
-# Docker
-
-# Kubernetes
-
+### SOLID principles
+### Idempotent
+### ACID properties
+### Jwt
+### Zero Trust Architecture
