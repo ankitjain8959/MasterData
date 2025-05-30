@@ -52,6 +52,7 @@ This is useful when processing incoming API requests or reading data from MongoD
 - ACID properties
 - Jwt
 - Zero Trust Architecture
+- Stateful vs Stateless applications
 
 # Maven
 
@@ -60,3 +61,4 @@ This is useful when processing incoming API requests or reading data from MongoD
 # Docker
 
 # Kubernetes
+
