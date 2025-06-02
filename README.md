@@ -103,6 +103,13 @@ Stateful application: <br>
 - Scaling is harder because user state is on a particular server (need sticky sessions or session replication).
 - If the server crashes, session data is lost.
 
+### Pass by Value vs Pass by Reference
+| Term                  | What it Really Means                                                                                                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **Pass by Reference**     | The function receives a **reference (pointer)** to the variable. Changing it inside the function **does affect the original**. |
+| **Pass by Value** | The function receives a **copy** of the variable. Changing it inside the function **won’t affect the original**. |
+
+
 ### SOLID principles
 ### Idempotent
 ### ACID properties
