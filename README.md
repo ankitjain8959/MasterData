@@ -1,4 +1,82 @@
 # Java
+### Java: Pass by Value or Pass by Reference?
+Java is **strictly pass-by-Value**, exactly like C.
+
+**Example 1: Primitive Data Type**
+```
+public class PassByValueDemo {
+
+    public static void main(String[] args) {
+        int number = 10;
+        System.out.println("Before: " + number); // Output: Before: 10
+        modifyNumber(number);
+        System.out.println("After: " + number); // Output: After: 10
+    }
+
+    public static void modifyNumber(int value) {
+        value = value * 2;
+        System.out.println("Modified: " + value); // Output: Modified: 20
+    }
+}
+```
+In this example, the number variable is a primitive data type (int). When we pass this variable to the modifyNumber() method, only a copy of its value is passed. As a result, the original variable remains unaffected. <br>
+
+**Example 2: Objects**
+```
+public class PassByValueDemo {
+
+    public static void main(String[] args) {
+        Point point = new Point(2, 3);
+        System.out.println("Before: " + point); // Output: Before: (2, 3)
+        modifyPoint(point);
+        System.out.println("After: " + point); // Output: After: (20, 30)
+    }
+
+    public static void modifyPoint(Point point) {
+        point.setX(point.getX() * 10);
+        point.setY(point.getY() * 10);
+        System.out.println("Modified: " + point); // Output: Modified: (20, 30)
+    }
+}
+
+class Point {
+    private int x;
+    private int y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + x + ", " + y + ")";
+    }
+}
+```
+In this example, when we pass the point object to the modifyPoint() method, only a copy of the object's reference value (i.e. memory address) is passed. <br>
+The original object is modified in the method, resulting in the change being reflected in the output. However, it's crucial to understand that the object's reference itself is passed by value, meaning the object's memory address cannot be changed. <br>
+
+
+**Conclusion:** <br>
+Java is a pass-by-value language in both cases — primitive data types as well as objects. When passing objects to methods, it’s important to remember that their reference values (i.e. memory addresses) are being passed by value.
+
 ### Jackson
 Jackson is a popular Java library used for converting Java objects to and from JSON.
 It’s the default JSON processor in Spring Boot.
@@ -20,7 +98,6 @@ This is useful when sending JSON responses from your service.
 MyObject obj = objectMapper.readValue(jsonString, MyObject.class);
 
 This is useful when processing incoming API requests or reading data from MongoDB or external APIs.
-
 
 ### Serialization & Deserialization
 ### Mapstruct
