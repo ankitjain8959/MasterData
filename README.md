@@ -120,6 +120,7 @@ This is useful when processing incoming API requests or reading data from MongoD
 ### Spring Security
 ### Spring Profiles
 ### Spring Bean
+### Unit test vs Integration test vs Slice tests
 
 # Maven
 
