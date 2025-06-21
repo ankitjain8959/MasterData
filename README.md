@@ -77,24 +77,23 @@ The original object is modified in the method, resulting in the change being ref
 **Conclusion:** <br>
 Java is a pass-by-value language in both cases — primitive data types as well as objects. When passing objects to methods, it’s important to remember that their reference values (i.e. memory addresses) are being passed by value.
 
-### Jackson
-Jackson is a popular Java library used for converting Java objects to and from JSON.
-It’s the default JSON processor in Spring Boot.
-
-When the microservice receives or returns data via REST APIs, Jackson automatically converts:
+### Jackson (library) & ObjectMapper (core class from Jackson library)
+Jackson is a popular Java library used for converting Java objects to and from JSON. It’s the default JSON processor in Spring Boot. <br>
+When the microservice receives or returns data via REST APIs, Jackson automatically converts: <br>
 	•	Incoming JSON (from requests) into Java objects => deserialization
 	•	Outgoing Java objects (responses) into JSON => serialization
 
-### ObjectMapper
+
+**ObjectMapper** <br>
 ObjectMapper is the core class from the Jackson library that enables actual conversion between Java objects and JSON.
 
-Purpose of ObjectMapper:
-	1.	Serialize Java objects to JSON:
+Purpose of ObjectMapper: <br>
+> Serialize Java objects to JSON:
 String json = objectMapper.writeValueAsString(myObject);
 
 This is useful when sending JSON responses from your service.
 
-	2.	Deserialize JSON to Java objects:
+> Deserialize JSON to Java objects:
 MyObject obj = objectMapper.readValue(jsonString, MyObject.class);
 
 This is useful when processing incoming API requests or reading data from MongoDB or external APIs.
@@ -120,7 +119,7 @@ This is useful when processing incoming API requests or reading data from MongoD
 ### Spring Security
 ### Spring Profiles
 ### Spring Bean
-### Unit test vs Integration test vs Slice tests
+### Unit test vs Integration test vs Slice tests vs Contract testing
 
 # Maven
 
